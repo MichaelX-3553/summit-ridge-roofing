@@ -1,0 +1,84 @@
+@import '@fontsource-variable/outfit';
+@import '@fontsource/jetbrains-mono/400.css';
+@import '@fontsource/jetbrains-mono/700.css';
+@import 'tailwindcss';
+
+@theme {
+	--color-paper: #f6f7f8;
+	--color-card: #ffffff;
+	--color-ink: #16191e;
+	--color-ink-soft: #55606c;
+	--color-ink-faint: #8b95a1;
+	--color-line: #e3e6ea;
+	--color-band: #14181f;
+	--color-band-soft: #1d232c;
+	--color-band-line: #2b333e;
+	--color-clay: #c4502a;
+	--color-clay-deep: #a03f20;
+	--color-clay-tint: #f9ece6;
+	--color-slate-deep: #232a33;
+
+	--font-sans: 'Outfit Variable', ui-sans-serif, system-ui, sans-serif;
+	--font-mono: 'JetBrains Mono', ui-monospace, monospace;
+
+	--ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+* {
+	box-sizing: border-box;
+}
+
+html {
+	scroll-behavior: smooth;
+}
+
+html,
+body,
+#app {
+	min-height: 100%;
+}
+
+body {
+	margin: 0;
+	background: var(--color-paper);
+	color: var(--color-ink);
+	font-family: var(--font-sans);
+	-webkit-font-smoothing: antialiased;
+	text-rendering: optimizeLegibility;
+}
+
+::selection {
+	background: var(--color-clay-tint);
+	color: var(--color-clay-deep);
+}
+
+:focus-visible {
+	outline: 2px solid var(--color-clay);
+	outline-offset: 2px;
+}
+
+h1,
+h2,
+h3 {
+	text-wrap: balance;
+	letter-spacing: -0.02em;
+}
+
+.num {
+	font-family: var(--font-mono);
+	font-variant-numeric: tabular-nums;
+	letter-spacing: -0.01em;
+}
+
+@media (prefers-reduced-motion: reduce) {
+	html {
+		scroll-behavior: auto;
+	}
+	*,
+	*::before,
+	*::after {
+		animation-duration: 0.01ms !important;
+		animation-iteration-count: 1 !important;
+		transition-duration: 0.01ms !important;
+	}
+}
